@@ -8,6 +8,7 @@ import SignUp from './signup';  // Import the SignUp component
 import NotificationsPage from './notifications';
 import SettingsPage from './settings';
 import HomePage from './HomePage';
+import PlayerProfile from './PlayerProfile'; 
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <Route path="/notifications" element={<NotificationsPage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/HomePage" element={<HomePage />} />
-
+        <Route path="/player/:name" element={<PlayerProfile />} />
+        
       </Routes>
     </Router>
   );

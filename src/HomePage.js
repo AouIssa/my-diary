@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from "react-slick";
 
 import { FaCommentDots, FaHome, FaUser, FaBell, FaCog } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Layout from './layout';
@@ -76,7 +76,12 @@ const HomePage = () => {
             <h2 className="text-3xl font-bold text-gray-800 mb-6">Talented Players</h2>
             <Slider {...settings}>
               {players.map(player => (
-                <div key={player.name} className="p-4 bg-gray-200 rounded-lg shadow-xl flex flex-col items-center text-center">
+                <div
+                  key={player.name}
+                  className="p-4 bg-gray-200 rounded-lg shadow-xl flex flex-col items-center text-center"
+                  onClick={() => navigate(`/player/${player.name}`)}  // Navigate to the player's profile page when the div is clicked
+                  style={{ cursor: 'pointer' }}  // Change the cursor to a pointer when hovering over the div
+                >
                   <img src={player.imageUrl} alt={player.name} className="w-36 h-36 rounded-full mb-6 object-cover mx-auto" />
                   <h3 className="text-2xl text-gray-800">{player.name}</h3>
                   <p className="text-lg text-gray-600">{player.role}, {player.age}yrs</p>
