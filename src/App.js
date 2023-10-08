@@ -8,8 +8,9 @@ import SignUp from './signup';  // Import the SignUp component
 import NotificationsPage from './notifications';
 import SettingsPage from './settings';
 import HomePage from './HomePage';
-import PlayerProfile from './PlayerProfile'; 
+import PlayerProfile from './PlayerProfile';
 import CoachProfile from './CoachProfile';  // Import the CoachProfile component
+import ClubProfile from './ClubProfile';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         <Route path="/HomePage" element={<HomePage />} />
         <Route path="/player/:name" element={<PlayerProfile />} />
         <Route path="/coach/:name" element={<CoachProfile />} />
-
+        <Route path="/club/:name" element={<ClubProfile />} />
       </Routes>
     </Router>
   );

@@ -114,7 +114,12 @@ const HomePage = () => {
             <h2 className="text-3xl font-bold text-gray-800 mb-6">Clubs</h2>
             <Slider {...settings}>
               {clubs.map(club => (
-                <div key={club.name} className="p-4 bg-gray-200 rounded-lg shadow-xl flex flex-col items-center text-center">
+                <div
+                  key={club.name}
+                  className="p-4 bg-gray-200 rounded-lg shadow-xl flex flex-col items-center text-center"
+                  onClick={() => navigate(`/club/${club.name.replace(/\s+/g, '-').toLowerCase()}`)} // Added navigate function to change to the club's profile page
+                  style={{ cursor: 'pointer' }}
+                >
                   <img src={club.imageUrl} alt={club.name} className="w-36 h-36 mb-6 object-cover mx-auto" />
                   <h3 className="text-2xl text-gray-800">{club.name}</h3>
                   <p className="text-lg text-gray-600">{club.description}</p>
