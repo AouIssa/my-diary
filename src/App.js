@@ -9,6 +9,7 @@ import NotificationsPage from './notifications';
 import SettingsPage from './settings';
 import HomePage from './HomePage';
 import PlayerProfile from './PlayerProfile'; 
+import CoachProfile from './CoachProfile';  // Import the CoachProfile component
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/HomePage" element={<HomePage />} />
         <Route path="/player/:name" element={<PlayerProfile />} />
-        
+        <Route path="/coach/:name" element={<CoachProfile />} />
+
       </Routes>
     </Router>
   );

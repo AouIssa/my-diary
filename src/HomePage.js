@@ -95,7 +95,12 @@ const HomePage = () => {
             <h2 className="text-3xl font-bold text-gray-800 mb-6">Captains/Coaches</h2>
             <Slider {...settings}>
               {coaches.map(coach => (
-                <div key={coach.name} className="p-4 bg-gray-200 rounded-lg shadow-xl flex flex-col items-center text-center">
+                <div
+                  key={coach.name}
+                  className="p-4 bg-gray-200 rounded-lg shadow-xl flex flex-col items-center text-center"
+                  onClick={() => navigate(`/coach/${coach.name.split(' ').join('-')}`)}  // Navigate to the coach's profile page when the div is clicked
+                  style={{ cursor: 'pointer' }}  // Change the cursor to a pointer when hovering over the div
+                >
                   <img src={coach.imageUrl} alt={coach.name} className="w-36 h-36 rounded-full mb-6 object-cover mx-auto" />
                   <h3 className="text-2xl text-gray-800">{coach.name}</h3>
                   <p className="text-lg text-gray-600">{coach.experience}</p>

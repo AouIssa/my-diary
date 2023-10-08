@@ -36,18 +36,32 @@ const PlayerProfile = () => {
         { type: 'image', src: 'https://via.placeholder.com/150' },
         { type: 'image', src: 'https://via.placeholder.com/150' },
     ];
-
+    
     const sliderSettings = {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
-        appendDots: dots => (
-            <div style={{ padding: "20px 0" }}> {/* Add this line to add padding around the dots */}
-                <ul style={{ margin: "0px" }}> {dots} </ul>
-            </div>
-        )
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            }
+        ]
     };
 
     return (
@@ -112,10 +126,10 @@ const PlayerProfile = () => {
                     </div>
 
                     <div className="media mt-6">
-                        <h3 className="text-2xl font-bold text-gray-800 mb-4">Pictures & Videos</h3>
+                        <h3 className="text-2xl font-bold text-gray-800">Pictures & Videos</h3>
                         <Slider {...sliderSettings}>
                             {media.map((item, index) => (
-                                <div key={index} className="px-1">
+                                <div key={index} className="p-4">
                                     <div className="m-2">
                                         {item.type === 'video' ? (
                                             <video src={item.src} className="w-full h-64 object-cover rounded-lg" controls poster={item.thumbnail}></video>

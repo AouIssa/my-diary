@@ -10,7 +10,7 @@ const Layout = ({ children }) => (
             {children}
         </div>
 
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 mt-12">
             <BottomNavBar />
         </div>
     </div>
