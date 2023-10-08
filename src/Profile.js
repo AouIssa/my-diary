@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaHome, FaUser, FaBell, FaCog, FaCommentAlt } from 'react-icons/fa';
 import Layout from './layout';
 
 const Profile = () => {
